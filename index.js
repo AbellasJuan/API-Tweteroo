@@ -6,16 +6,20 @@ server.use(cors());
 
 server.use(express.json());
 
-const exemplos = [];
+const tweets = [];
 
-server.get('/postagem' , (req, res)=> {
-    res.send(exemplos);
+server.get('/tweets' , (req, res)=> {
+    res.send(tweets);
 });
 
-server.post('/postagem', (req, res) => {
-    const exemplo = req.body;
-    exemplos.push(exemplo);
-    res.send(exemplo);
+server.post('/sign-up', (req, res) => {
+    res.send('OK');
 });
+
+server.post('/tweets', (req, res) => {
+    const tweet = req.body;
+    tweets.push(tweet);
+    res.send('OK');
+})
 
 server.listen(5000);
