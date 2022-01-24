@@ -11,7 +11,8 @@ const tweets = [];
 
 server.get('/tweets' , (req, res)=> {
     const primeiros10Tweets = tweets.slice(0-10);
-    res.send(primeiros10Tweets);
+    const primeiros10ComOrdemCorreta = primeiros10Tweets.reverse();
+    res.send(primeiros10ComOrdemCorreta);
 });
 
 server.post('/sign-up', (req, res) => {
